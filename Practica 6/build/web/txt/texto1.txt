@@ -1,0 +1,5 @@
+<p style="background-color:black;">El hombre simplemente se encerraba en su habitación. Sin salir ya fuera para</p>
+<p style="background-color:black;">desayunar o almorzar, él ni siquiera salía para visitar el baño. Exasperado, y</p>
+<p style="background-color:black;">preguntándose qué le pasaba al sujeto, Guido tocó la puerta. Después de no</p>
+<p style="background-color:black;">recibir respuesta durante cinco segundos, él decidió seguir la ruta menos molesta</p>
+<p style="background-color:black;">y simplemente abrir la puerta.</p>
