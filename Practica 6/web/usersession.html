@@ -50,6 +50,27 @@ and open the template in the editor.
                 xhr.open("GET", "txt/texto1.txt", true);
                 xhr.send();
             }
+
+            function loadXml(){
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var data = this.responseXML;
+                        var list = "<ul>";
+                        var xmlData = data.getElementsByTagName("CD");
+                        var i;
+                        for(i = 0; i < xmlData.length; i++){
+                            list += "<li>"+ xmlData[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+                                    " - " + xmlData[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+                                    " - $" + xmlData[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue +
+                                    "</li>";
+                        }
+                        list += "</ul>";
+                        document.getElementById("cont").innerHTML = list;
+                    }
+                };
+                xhr.open("GET", "xml/catalog.xml", true);
+                xhr.send();
+            }
         </script>
     </head>
     <body onload="createActiveObject()">
@@ -67,6 +88,11 @@ and open the template in the editor.
             <div class="container">
                 <div class="child">
                     <button type="button" class="btn btn-dark" onclick="loadText()">Cargar Texto</button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="child">
+                    <button type="button" class="btn btn-dark" onclick="loadXml()">Cargar Xml</button>
                 </div>
             </div>
             <div class="container">
